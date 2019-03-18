@@ -3,13 +3,19 @@ package zad2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+
 
 public class SudokuBoard {
     private int[][] board;
 
     public SudokuBoard() {
         board = new int[9][9];
+    }
+
+    public int[][] getBoard(){
+        int [][]pom;
+        pom = board;
+        return pom;
     }
 
     private boolean containsInRow(int row, int number) {
@@ -43,34 +49,13 @@ public class SudokuBoard {
         return false;
     }
 
-    private boolean isAllowed(int row, int col, int number) {
+    public boolean checkBoard(int row, int col, int number) {
         return !(containsInRow(row, number) || containsInCol(col, number) || containsInBox(row, col, number));
     }
 
-//Wypelnie pola ktore sa zerami
-    private boolean solve() {
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (board[row][col] == 0) {
-                    for (int number = 1; number <= 9; number++) {
-                        if (isAllowed(row, col, number)) {
-                            board[row][col] = number;
-                            if (solve()) {
-                                return true;
-                            } else {
-                                board[row][col] = 0;
-                            }
-                        }
-                    }
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
 
 //Wypelnia cala plansze zerami i losuje pierwszy rzad
-    private void generateBoard() {
+    public void generateBoard() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 board[i][j] = 0;
@@ -86,9 +71,27 @@ public class SudokuBoard {
         }
     }
 
-    public void fillBoard(){
-        generateBoard();
-        solve();
+    public int get(int x,int y){
+        if(x<0||x>9||y<0||y>9) throw new IllegalArgumentException("liczby poza zakresem");
+        for(int i=0;i<9;i++){
+            for(int j=0;j<9;j++){
+                if(i==x && j==y){
+                    return board[i][j];
+                }
+            }
+        }
+        return 0;
+    }
+
+    public void set(int x, int y, int value){
+        if(x<0||x>9||y<0||y>9||value>9||value<0) throw new IllegalArgumentException("liczby poza zakresem");
+        for(int i=0;i<9;i++){
+            for(int j=0;j<9;j++){
+                if(i==x && j==y){
+                    board[i][j]=value;
+                }
+            }
+        }
     }
 
     public void printBoard() {
