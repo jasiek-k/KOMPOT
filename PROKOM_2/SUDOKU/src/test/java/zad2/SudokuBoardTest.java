@@ -3,81 +3,97 @@ package zad2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.Assert;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SudokuBoardTest {
     SudokuBoard sudokuBoard;
     SudokuBoard sudokuBoard2;
 
+
     @BeforeEach
     public void boards() {
         sudokuBoard = new SudokuBoard();
         sudokuBoard2 = new SudokuBoard();
-        sudokuBoard.fillBoard();
-        sudokuBoard2.fillBoard();
+    }
+
+
+    @Test
+    public void checkGet1() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.get(-1,-2));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
     }
 
     @Test
-    public void fillBoard() {
-        int tab[][]= sudokuBoard.getBoard(),
-                tab2[][]= sudokuBoard2.getBoard();
-        int count=0;
-        for(int i=0; i<9; i++)
-        {
-            for(int j=0; j<9; j++)
-            {
-                if(tab[i][j]==tab2[i][j]) count++;
-
-            }
-        }
-        Assertions.assertFalse(count==81);
+    public void checkGet2() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.get(9,-2));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
     }
 
     @Test
-    public void checkRows() {
-        int tab[][]= sudokuBoard.getBoard();
-        for (int k = 0; k < 9; k++) {
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
-                    if (i != j) {
-                        Assertions.assertFalse(tab[k][i] == tab[k][j]);
-                        Assertions.assertTrue(tab[k][i] > 0);
-                        Assertions.assertTrue(tab[k][i] < 10);
-                    }
-                }
-            }
-        }
+    public void checkGet3() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.get(20,10));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
     }
 
     @Test
-    public void checkColumns() {
-        int tab[][] = sudokuBoard.getBoard();
-        for (int k = 0; k < 9; k++) {
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
-                    if (i != j) {
-                        Assertions.assertFalse(tab[i][k] == tab[j][k]);
-                        Assertions.assertTrue(tab[i][k] > 0);
-                        Assertions.assertTrue(tab[i][k] < 10);
-                    }
-                }
-            }
-        }
-
+    public void checkGet4() {
+        sudokuBoard.generateBoard();
+        SudokuSolver solver=new SudokuSolver();
+        solver.solve(sudokuBoard);
+        int tab[][]=sudokuBoard.getBoard();
+        Assertions.assertTrue(tab[5][5]==sudokuBoard.get(5,5));
     }
 
     @Test
-    public void checkBoxes() {
-        int tab[][] = sudokuBoard.getBoard();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 9; k++) {
-                    for (int l = k + 1; l < 9; l++) {
-                        Assertions.assertFalse(tab[i * 3 + (l / 3)][j * 3 + (l % 3)] == tab[i * 3 + (k / 3)][j * 3 + (k % 3)]);
-                    }
-                }
-            }
-        }
+    public void checkSet1() {
+        sudokuBoard.generateBoard();
+        sudokuBoard.set(5,5, 1);
+        Assertions.assertTrue(sudokuBoard.get(5,5)== 1);
+    }
+
+    @Test
+    public void checkSet2() {
+        sudokuBoard.generateBoard();
+        sudokuBoard.set(0,5, 5);
+        Assertions.assertTrue(sudokuBoard.get(0,5)== 5);
+    }
+
+    @Test
+    public void checkSet3() {
+        sudokuBoard.generateBoard();
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.set(0,5,-10));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
+        Assertions.assertFalse(sudokuBoard.get(0,5)== -10);
+    }
+
+    @Test
+    public void checkSet4() {
+        sudokuBoard.generateBoard();
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.set(-20,5,-10));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
+    }
+
+    @Test
+    public void checkSet5() {
+        sudokuBoard.generateBoard();
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                ()->sudokuBoard.set(10,5,1));
+        Assert.assertTrue(thrown.getMessage().contains("liczby poza zakresem"));
+    }
+
+    @Test
+    public void checkCheckBoard() {
+        SudokuBoard sudoku3=new SudokuBoard();
+        SudokuSolver solver=new SudokuSolver();
+        Assertions.assertFalse(sudoku3.checkBoard());
+        solver.solve(sudoku3);
+        Assertions.assertTrue(sudoku3.checkBoard());
     }
 }

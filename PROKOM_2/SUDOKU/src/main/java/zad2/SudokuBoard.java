@@ -3,7 +3,7 @@ package zad2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+
 
 public class SudokuBoard {
     private int[][] board;
@@ -12,60 +12,74 @@ public class SudokuBoard {
         board = new int[9][9];
     }
 
-    public int[][] getBoard(){
-        return board;
+    public int[][] getBoard() {
+        int[][] pom;
+        pom = board;
+        return pom;
     }
 
-    private boolean checkCols(int col, int value) {
+    public boolean checkBoard() {
+        int count1 = 0, count2 = 0, count3 = 0;
+        for (int k = 0; k < 9; k++)
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (i != j) {
+                        if (board[k][i] == board[k][j] || board[k][i] < 0 || board[k][i] > 10) count1++;
+                        if (board[i][k] == board[j][k]) count2++;
+                    }
+                }
+            }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 9; k++) {
+                    for (int l = k + 1; l < 9; l++) {
+                        if (board[i * 3 + (l / 3)][j * 3 + (l % 3)] == board[i * 3 + (k / 3)][j * 3 + (k % 3)])
+                            count3++;
+                    }
+                }
+            }
+        }
+        if (count1 == 0 && count2 == 0 && count3 == 0) return true;
+        else return false;
+    }
+
+    private boolean containsInRow(int row, int number) {
         for (int i = 0; i < 9; i++) {
-            if (board[i][col] == value) return true;
+            if (board[row][i] == number) {
+                return true;
+            }
         }
         return false;
     }
 
-    private boolean checkRows(int row, int value) {
+    private boolean containsInCol(int col, int number) {
         for (int i = 0; i < 9; i++) {
-            if (board[row][i] == value) return true;
+            if (board[i][col] == number) {
+                return true;
+            }
         }
         return false;
     }
 
-    private boolean checkBox(int row, int col, int value) {
+    private boolean containsInBox(int row, int col, int number) {
         int r = row - row % 3;
         int c = col - col % 3;
         for (int i = r; i < r + 3; i++) {
             for (int j = c; j < c + 3; j++) {
-                if (board[i][j] == value) return true;
+                if (board[i][j] == number) {
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    private boolean checkBoard(int r, int c, int value) {
-        return !(checkRows(r, value) || checkCols(c, value) || checkBox(r, c, value));
+    public boolean checkBoard(int row, int col, int number) {
+        return !(containsInRow(row, number) || containsInCol(col, number) || containsInBox(row, col, number));
     }
 
-//Wypelnie pola ktore sa zerami
-    private boolean solve() {
-        for (int r = 0; r < 9; r++) {
-            for (int c = 0; c < 9; c++) {
-                if (board[r][c] == 0) {
-                    for (int val = 1; val <= 9; val++) {
-                        if (checkBoard(r, c, val)) {
-                            board[r][c] = val;
-                            if (solve()) return true;
-                            else board[r][c] = 0;
-                        }
-                    }
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-//Wypelnia cala plansze zerami i losuje pierwszy rzad
-    private void generateBoard() {
+    //Wypelnia cala plansze zerami i losuje pierwszy rzad
+    public void generateBoard() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 board[i][j] = 0;
@@ -81,9 +95,28 @@ public class SudokuBoard {
         }
     }
 
-    public void fillBoard(){
-        generateBoard();
-        solve();
+    public int get(int x, int y) {
+        if (x < 0 || x > 9 || y < 0 || y > 9) throw new IllegalArgumentException("liczby poza zakresem");
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (i == x && j == y) {
+                    return board[i][j];
+                }
+            }
+        }
+        return 0;
+    }
+
+    public void set(int x, int y, int value) {
+        if (x < 0 || x > 9 || y < 0 || y > 9 || value > 9 || value < 0)
+            throw new IllegalArgumentException("liczby poza zakresem");
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (i == x && j == y) {
+                    board[i][j] = value;
+                }
+            }
+        }
     }
 
     public void printBoard() {
@@ -94,8 +127,4 @@ public class SudokuBoard {
             System.out.println();
         }
     }
-
-
-
 }
-
