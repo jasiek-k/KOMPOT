@@ -47,4 +47,18 @@ class SudokuSolverTest {
             }
         }
     }
+
+    @Test
+    void solveBox() {
+        int tab2[][]=board.getBoard();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 9; k++) {
+                    for (int l = k + 1; l < 9; l++) {
+                        Assertions.assertFalse(tab2[i * 3 + (l / 3)][j * 3 + (l % 3)] == tab2[i * 3 + (k / 3)][j * 3 + (k % 3)]);
+                    }
+                }
+            }
+        }
+    }
 }
