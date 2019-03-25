@@ -1,7 +1,6 @@
 package zad2;
 
-public class SudokuSolver {
-    public static void solve(SudokuBoard sudokuBoard){
-        BacktrackingSudokuSolver.solve(sudokuBoard);
-    }
+public interface SudokuSolver {
+    public boolean solve(SudokuBoard sudokuBoard);
 }
+

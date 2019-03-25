@@ -12,20 +12,20 @@ class SudokuSolverTest {
     void boards() {
         board=new SudokuBoard();
         board.generateBoard();
-        solver=new SudokuSolver();
+        solver=new BacktrackingSudokuSolver();
         solver.solve(board);
     }
 
     @Test
     void solveRows() {
-        int tab2[][]=board.getBoard();
+        SudokuField tab2[][]=board.getBoard();
         for (int k = 0; k < 9; k++) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     if (i != j) {
                         Assertions.assertFalse(tab2[k][i] == tab2[k][j]);
-                        Assertions.assertTrue(tab2[k][i] > 0);
-                        Assertions.assertTrue(tab2[k][i] < 10);
+                        Assertions.assertTrue(tab2[k][i].getFieldValue() > 0);
+                        Assertions.assertTrue(tab2[k][i].getFieldValue() < 10);
                     }
                 }
             }
@@ -34,14 +34,14 @@ class SudokuSolverTest {
 
     @Test
     void solveCol(){
-        int tab2[][]=board.getBoard();
+        SudokuField tab2[][]=board.getBoard();
         for (int k = 0; k < 9; k++) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     if (i != j) {
                         Assertions.assertFalse(tab2[i][k] == tab2[j][k]);
-                        Assertions.assertTrue(tab2[i][k] > 0);
-                        Assertions.assertTrue(tab2[i][k] < 10);
+                        Assertions.assertTrue(tab2[i][k].getFieldValue() > 0);
+                        Assertions.assertTrue(tab2[i][k].getFieldValue() < 10);
                     }
                 }
             }
@@ -50,7 +50,7 @@ class SudokuSolverTest {
 
     @Test
     void solveBox() {
-        int tab2[][]=board.getBoard();
+        SudokuField tab2[][]=board.getBoard();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 9; k++) {
