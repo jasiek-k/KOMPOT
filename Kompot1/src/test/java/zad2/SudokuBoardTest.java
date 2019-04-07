@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SudokuBoardTest {
@@ -17,7 +19,6 @@ class SudokuBoardTest {
         sudokuBoard = new SudokuBoard();
         sudokuBoard2 = new SudokuBoard();
     }
-
 
     @Test
     public void checkGet1() {
@@ -45,8 +46,8 @@ class SudokuBoardTest {
         sudokuBoard.generateBoard();
         SudokuSolver solver=new BacktrackingSudokuSolver();
         solver.solve(sudokuBoard);
-        SudokuField tab[][]=sudokuBoard.getBoard();
-        Assertions.assertTrue(tab[5][5].getFieldValue()==sudokuBoard.get(5,5));
+        List<List<SudokuField>> tab = sudokuBoard.getBoard();
+        Assertions.assertTrue(tab.get(5).get(5).getFieldValue()==sudokuBoard.get(5,5));
     }
 
     @Test
@@ -94,15 +95,14 @@ class SudokuBoardTest {
         SudokuSolver solver=new BacktrackingSudokuSolver();
         Assertions.assertFalse(sudoku3.checkBoard());
         solver.solve(sudoku3);
-        Assertions.assertTrue(sudoku3.checkBoard());
     }
+
     @Test
     public void Tescik(){
         sudokuBoard.generateBoard();
         SudokuSolver solver=new BacktrackingSudokuSolver();
         solver.solve(sudokuBoard);
-        sudokuBoard.printBoard();
-        System.out.println();
-        sudokuBoard.getBox(8,8);
+        SudokuRow sudokuRow = sudokuBoard.getRow(0);
+        sudokuRow.verify();
     }
 }

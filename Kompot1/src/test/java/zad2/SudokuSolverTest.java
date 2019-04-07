@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class SudokuSolverTest {
     SudokuBoard board;
     SudokuSolver solver;
@@ -18,14 +20,14 @@ class SudokuSolverTest {
 
     @Test
     void solveRows() {
-        SudokuField tab2[][]=board.getBoard();
+        List<List<SudokuField>> tab2=board.getBoard();
         for (int k = 0; k < 9; k++) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     if (i != j) {
-                        Assertions.assertFalse(tab2[k][i] == tab2[k][j]);
-                        Assertions.assertTrue(tab2[k][i].getFieldValue() > 0);
-                        Assertions.assertTrue(tab2[k][i].getFieldValue() < 10);
+                        Assertions.assertFalse(tab2.get(k).get(i) == tab2.get(k).get(j));
+                        Assertions.assertTrue(tab2.get(k).get(i).getFieldValue() > 0);
+                        Assertions.assertTrue(tab2.get(k).get(i).getFieldValue() < 10);
                     }
                 }
             }
@@ -34,14 +36,14 @@ class SudokuSolverTest {
 
     @Test
     void solveCol(){
-        SudokuField tab2[][]=board.getBoard();
+        List<List<SudokuField>> tab2=board.getBoard();
         for (int k = 0; k < 9; k++) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     if (i != j) {
-                        Assertions.assertFalse(tab2[i][k] == tab2[j][k]);
-                        Assertions.assertTrue(tab2[i][k].getFieldValue() > 0);
-                        Assertions.assertTrue(tab2[i][k].getFieldValue() < 10);
+                        Assertions.assertFalse(tab2.get(i).get(k) == tab2.get(j).get(k));
+                        Assertions.assertTrue(tab2.get(i).get(k).getFieldValue() > 0);
+                        Assertions.assertTrue(tab2.get(i).get(k).getFieldValue() < 10);
                     }
                 }
             }
@@ -50,12 +52,12 @@ class SudokuSolverTest {
 
     @Test
     void solveBox() {
-        SudokuField tab2[][]=board.getBoard();
+        List<List<SudokuField>> tab2=board.getBoard();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 9; k++) {
                     for (int l = k + 1; l < 9; l++) {
-                        Assertions.assertFalse(tab2[i * 3 + (l / 3)][j * 3 + (l % 3)] == tab2[i * 3 + (k / 3)][j * 3 + (k % 3)]);
+                        Assertions.assertFalse(tab2.get(i * 3 + (l / 3)).get(j * 3 + (l % 3)) == tab2.get(i * 3 + (k / 3)).get(j * 3 + (k % 3)));
                     }
                 }
             }

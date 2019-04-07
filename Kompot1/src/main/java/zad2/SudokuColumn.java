@@ -1,18 +1,9 @@
 package zad2;
 
+import java.util.List;
 
-public class SudokuColumn {
-    private SudokuField col[]=new SudokuField[9];
-    public boolean verify() {
-    return SudokuField.verify(col);
-    }
-
-    public SudokuField[] getCol() {
-        return col;
-    }
-
-    public void setCol(SudokuField[] col) {
-        this.col = col;
+public class SudokuColumn extends SudokuBCR {
+    public SudokuColumn(final List<SudokuField> sudokuField){
+        super(sudokuField);
     }
 }
-//obczaic treeset treeset.addAll

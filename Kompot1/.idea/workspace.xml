@@ -22,26 +22,27 @@
     <session id="641176326">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="7" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="67" />
+          <entry key="JAVA" value="107" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3253" />
+          <entry key="JAVA" value="4807" />
           <entry key="XML" value="57" />
         </counts>
       </usages-collector>
@@ -49,11 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
+            <state relative-caret-position="241">
+              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,44 +63,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBox.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuBoxTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#130#131#0" expanded="true" />
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#280#281#0" expanded="true" />
-                <element signature="e#310#311#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-              <folding>
-                <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#169#170#0" expanded="true" />
-                <element signature="e#201#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuBoardTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -126,16 +93,19 @@
         <option value="$PROJECT_DIR$/src/main/java/main.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/main.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/zad2/BacktrackingSudokuSolver.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuSolver.java" />
-        <option value="$PROJECT_DIR$/src/test/java/zad2/BacktrackingSudokuSolverTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/zad2/SudokuSolverTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuRow.java" />
+        <option value="$PROJECT_DIR$/src/test/java/zad2/BacktrackingSudokuSolverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/zad2/BacktrackingSudokuSolver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/zad2/SudokuSolverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuBCFR.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuColumn.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuBox.java" />
         <option value="$PROJECT_DIR$/src/test/java/zad2/SudokuBoardTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuBCR.java" />
+        <option value="$PROJECT_DIR$/src/test/java/zad2/SudokuRowTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuRow.java" />
         <option value="$PROJECT_DIR$/src/main/java/zad2/SudokuBoard.java" />
       </list>
     </option>
@@ -180,9 +150,8 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="880" />
-    <option name="y" value="14" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -337,7 +306,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553785468273" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554631219398" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -372,7 +341,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SudokuBoardTest">
+  <component name="RunManager" selected="JUnit.BacktrackingSudokuSolverTest">
+    <configuration name="BacktrackingSudokuSolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kompot1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zad2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zad2" />
+      <option name="MAIN_CLASS_NAME" value="zad2.BacktrackingSudokuSolverTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SudokuBoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kompot1" />
       <extension name="coverage">
@@ -403,22 +386,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SudokuBoardTest.checkBoxes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kompot1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zad2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zad2" />
-      <option name="MAIN_CLASS_NAME" value="zad2.SudokuBoardTest" />
-      <option name="METHOD_NAME" value="checkBoxes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SudokuBoardTest.checkCheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kompot1" />
       <extension name="coverage">
@@ -435,7 +402,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SudokuBoardTest.checkSet2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SudokuSolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kompot1" />
       <extension name="coverage">
         <pattern>
@@ -444,27 +411,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="zad2" />
-      <option name="MAIN_CLASS_NAME" value="zad2.SudokuBoardTest" />
-      <option name="METHOD_NAME" value="checkSet2" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="zad2.SudokuSolverTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.SudokuBoardTest.checkBoxes" />
       <item itemvalue="JUnit.SudokuBoardTest" />
       <item itemvalue="JUnit.SudokuBoardTest.Tescik" />
-      <item itemvalue="JUnit.SudokuBoardTest.checkSet2" />
       <item itemvalue="JUnit.SudokuBoardTest.checkCheckBoard" />
+      <item itemvalue="JUnit.SudokuSolverTest" />
+      <item itemvalue="JUnit.BacktrackingSudokuSolverTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BacktrackingSudokuSolverTest" />
+        <item itemvalue="JUnit.SudokuSolverTest" />
         <item itemvalue="JUnit.SudokuBoardTest" />
-        <item itemvalue="JUnit.SudokuBoardTest.checkCheckBoard" />
         <item itemvalue="JUnit.SudokuBoardTest.Tescik" />
-        <item itemvalue="JUnit.SudokuBoardTest.checkSet2" />
-        <item itemvalue="JUnit.SudokuBoardTest.checkBoxes" />
+        <item itemvalue="JUnit.SudokuBoardTest.checkCheckBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -493,48 +458,50 @@
       <workItem from="1553552426011" duration="877000" />
       <workItem from="1553553683730" duration="201000" />
       <workItem from="1553783509618" duration="2000000" />
+      <workItem from="1554576405829" duration="2416000" />
+      <workItem from="1554626079362" duration="4922000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SudokuBoardTest_Tescik - 2019.03.28 at 15h 47m 36s.xml">
+    <history-entry file="SudokuBoardTest_Tescik - 2019.04.07 at 11h 50m 04s.xml">
       <configuration name="SudokuBoardTest.Tescik" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest_Tescik - 2019.03.28 at 15h 47m 53s.xml">
+    <history-entry file="SudokuBoardTest_Tescik - 2019.04.07 at 11h 54m 50s.xml">
       <configuration name="SudokuBoardTest.Tescik" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest_Tescik - 2019.03.28 at 15h 58m 14s.xml">
+    <history-entry file="SudokuBoardTest_Tescik - 2019.04.07 at 11h 54m 58s.xml">
       <configuration name="SudokuBoardTest.Tescik" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest_Tescik - 2019.03.28 at 15h 58m 33s.xml">
+    <history-entry file="SudokuBoardTest_Tescik - 2019.04.07 at 11h 55m 29s.xml">
       <configuration name="SudokuBoardTest.Tescik" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest - 2019.03.28 at 16h 01m 20s.xml">
+    <history-entry file="BacktrackingSudokuSolverTest - 2019.04.07 at 11h 56m 03s.xml">
+      <configuration name="BacktrackingSudokuSolverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuBoardTest - 2019.04.07 at 11h 56m 09s.xml">
       <configuration name="SudokuBoardTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest_checkCheckBoard - 2019.03.28 at 16h 02m 37s.xml">
-      <configuration name="SudokuBoardTest.checkCheckBoard" configurationId="JUnit" />
+    <history-entry file="SudokuSolverTest - 2019.04.07 at 11h 56m 14s.xml">
+      <configuration name="SudokuSolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuBoardTest_checkCheckBoard - 2019.03.28 at 16h 03m 26s.xml">
-      <configuration name="SudokuBoardTest.checkCheckBoard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuBoardTest_checkCheckBoard - 2019.03.28 at 16h 04m 10s.xml">
-      <configuration name="SudokuBoardTest.checkCheckBoard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuBoardTest_checkCheckBoard - 2019.03.28 at 16h 04m 24s.xml">
-      <configuration name="SudokuBoardTest.checkCheckBoard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuBoardTest - 2019.03.28 at 16h 04m 29s.xml">
+    <history-entry file="SudokuBoardTest - 2019.04.07 at 11h 59m 22s.xml">
       <configuration name="SudokuBoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuSolverTest - 2019.04.07 at 11h 59m 48s.xml">
+      <configuration name="SudokuSolverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BacktrackingSudokuSolverTest - 2019.04.07 at 11h 59m 52s.xml">
+      <configuration name="BacktrackingSudokuSolverTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20967000" />
+    <option name="totallyTimeSpent" value="28305000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14895834" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29853863" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -543,7 +510,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31885594" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3187166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -552,7 +519,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32838982" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32834226" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -615,16 +582,6 @@
         <state relative-caret-position="-449" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/BacktrackingSudokuSolverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="853">
@@ -633,16 +590,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/zad2/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuSolverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -652,82 +599,121 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/zad2/BacktrackingSudokuSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="374">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuRow.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="204">
+          <caret line="3840" selection-start-line="3840" selection-end-line="3840" />
           <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="e#122#123#0" expanded="true" />
-            <element signature="e#143#144#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#638#639#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#130#131#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#178121#178122#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="59" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBCR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#169#170#0" expanded="true" />
-            <element signature="e#201#202#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuFieldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuRowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuBoxTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuColumnTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuBoardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
+        <state relative-caret-position="1785">
+          <caret line="105" column="27" lean-forward="true" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/BacktrackingSudokuSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/zad2/SudokuSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/zad2/SudokuBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
