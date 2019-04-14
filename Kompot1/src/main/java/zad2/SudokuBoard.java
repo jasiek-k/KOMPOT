@@ -1,5 +1,8 @@
 package zad2;
 
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,16 +12,23 @@ import java.util.List;
 public class SudokuBoard {
     private List<List<SudokuField>> board;
 
+    public SudokuBoard(SudokuBoard sudoku) {
+        this.board=sudoku.board;
+    }
+
     public SudokuBoard() {
         board = Arrays.asList(new List[9]);
-        for (int i = 0; i <board.size() ; i++) {
-                board.set(i,Arrays.asList(new SudokuField[9]));
+
+        for (int i = 0; i < 9; i++) {
+            board.set(i, Arrays.asList(new SudokuField[9]));
+        }
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                board.get(i).set(j, new SudokuField());
             }
-            for(int i=0;i<board.size();i++){
-                for(int j=0;j<board.get(i).size();j++){
-                    board.get(i).set(j,new SudokuField());
-                }
-            }
+        }
+
     }
 
     public List<List<SudokuField>> getBoard() {
@@ -26,6 +36,7 @@ public class SudokuBoard {
         pom = board;
         return pom;
     }
+
 
     public boolean checkBoard() {
         for (int i = 0; i < 9; i++) {
@@ -113,38 +124,55 @@ public class SudokuBoard {
         }
     }
 
-    public SudokuRow getRow(int y){
-        if(y>9||y<0) throw new IllegalArgumentException("liczba poza zakresem");
+    public SudokuRow getRow(int y) {
+        if (y > 9 || y < 0) throw new IllegalArgumentException("liczba poza zakresem");
         List<SudokuField> sudokuField = Arrays.asList(new SudokuField[9]);
-        for(int i=0; i<9; i++)
-        {
-            sudokuField.set(i,this.board.get(y).get(i));
+        for (int i = 0; i < 9; i++) {
+            sudokuField.set(i, this.board.get(y).get(i));
         }
         SudokuRow row = new SudokuRow(sudokuField);
         return row;
     }
 
-    public SudokuColumn getColumn(int x){
-        if(x>9||x<0) throw new IllegalArgumentException("liczby poza zakresem");
+    public SudokuColumn getColumn(int x) {
+        if (x > 9 || x < 0) throw new IllegalArgumentException("liczby poza zakresem");
         List<SudokuField> sudokuField = Arrays.asList(new SudokuField[9]);
-        for(int i = 0;i<9;i++){
+        for (int i = 0; i < 9; i++) {
             sudokuField.set(i, this.board.get(i).get(x));
         }
         SudokuColumn sudokuColumn = new SudokuColumn(sudokuField);
         return sudokuColumn;
     }
 
-    public SudokuBox getBox(int x,int y){
-        if(x>8||x<0||y>8||y<0) throw new IllegalArgumentException("liczby poza zakresem");
-        int r = x - x % 3;
-        int c = y - y % 3;
-        List<SudokuField> sudokuField = Arrays.asList(new SudokuField[9]);
-        for (int i = 0; i <3; i++) {
-            for (int j = 0; j <3; j++) {
-                sudokuField.set(i, board.get(i + r).get(j + c));
+    public SudokuBox getBox(int row, int col) {
+        if(row>2||row<0||col>2||col<0) throw new IllegalArgumentException("liczby poza zakresem");
+        List<SudokuField> box = Arrays.asList(new SudokuField[9]);
+        int index = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                box.set(index++, board.get(row * 3 + i).get(col * 3 + j));
             }
         }
-        SudokuBox sudokuBox= new SudokuBox(sudokuField);
-        return sudokuBox;
+        return new SudokuBox(box);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SudokuBoard that = (SudokuBoard) o;
+        return Objects.equal(board, that.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(board);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("board", board)
+                .toString();
     }
 }

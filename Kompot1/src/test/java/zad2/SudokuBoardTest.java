@@ -7,17 +7,109 @@ import org.junit.Assert;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SudokuBoardTest {
+
     SudokuBoard sudokuBoard;
     SudokuBoard sudokuBoard2;
+    SudokuSolver solver = new BacktrackingSudokuSolver();
 
 
     @BeforeEach
     public void boards() {
         sudokuBoard = new SudokuBoard();
         sudokuBoard2 = new SudokuBoard();
+        sudokuBoard.generateBoard();
+        sudokuBoard2.generateBoard();
+        solver.solve(sudokuBoard);
+        solver.solve(sudokuBoard2);
+    }
+
+    @Test
+    public void hashTest() {
+        SudokuBoard sudokuBoard3 = new SudokuBoard();
+        sudokuBoard3.generateBoard();
+        solver.solve(sudokuBoard3);
+        SudokuBoard sudokuBoard4=(sudokuBoard);
+
+        for(int i=0; i<9; i++)
+        {
+            for(int j=0; j<9; j++)
+            {
+                sudokuBoard2.set(i,j,sudokuBoard.get(i,j));
+            }
+        }
+        Assertions.assertTrue(sudokuBoard.hashCode()==sudokuBoard4.hashCode());
+        Assertions.assertTrue(sudokuBoard.hashCode()!=sudokuBoard2.hashCode());
+        Assertions.assertTrue(sudokuBoard3.hashCode()!=sudokuBoard2.hashCode());
+        Assertions.assertTrue(sudokuBoard3.hashCode()!=sudokuBoard2.hashCode());
+    }
+
+    @Test
+    public void EqualsTest1() {
+        SudokuBoard sudokuBoard3=(sudokuBoard);
+        for(int i=0; i<9; i++)
+        {
+            for(int j=0; j<9; j++)
+            {
+                sudokuBoard2.set(i,j,sudokuBoard.get(i,j));
+            }
+        }
+
+        Assertions.assertTrue(sudokuBoard3.equals(sudokuBoard));
+        Assertions.assertTrue(sudokuBoard.equals(sudokuBoard3));
+        Assertions.assertFalse(sudokuBoard.equals(sudokuBoard2));
+        Assertions.assertFalse(sudokuBoard2.equals(sudokuBoard));
+    }
+
+    @Test
+    public void EqualsTest2() {
+        SudokuBoard sudokuBoard3 = new SudokuBoard();
+        sudokuBoard3.generateBoard();
+        solver.solve(sudokuBoard3);
+
+        SudokuBoard sudokuBoard4=(sudokuBoard);
+
+        for(int i=0; i<9; i++)
+        {
+            for(int j=0; j<9; j++)
+            {
+                sudokuBoard2.set(i,j,sudokuBoard.get(i,j));
+            }
+        }
+        Assertions.assertTrue(sudokuBoard.hashCode()==sudokuBoard4.hashCode() && sudokuBoard.equals(sudokuBoard4));
+        Assertions.assertTrue(sudokuBoard.hashCode()==sudokuBoard4.hashCode() && sudokuBoard4.equals(sudokuBoard));
+
+        Assertions.assertTrue(sudokuBoard.hashCode()!=sudokuBoard2.hashCode());
+        Assertions.assertFalse(sudokuBoard.equals(sudokuBoard2));
+        Assertions.assertFalse(sudokuBoard2.equals(sudokuBoard));
+
+        Assertions.assertTrue(sudokuBoard3.hashCode()!=sudokuBoard2.hashCode());
+        Assertions.assertFalse(sudokuBoard3.equals(sudokuBoard2));
+        Assertions.assertFalse(sudokuBoard2.equals(sudokuBoard3));
+    }
+    @Test
+    public void equalsTest3(){
+        SudokuBoard su = new SudokuBoard();
+        SudokuBoard su1 = new SudokuBoard();
+        Assertions.assertEquals(su.hashCode(), su1.hashCode());
+        Assertions.assertTrue(su.equals(su1));
+    }
+
+    @Test
+    public void testToStringNotNull(){
+        assertNotNull(sudokuBoard.toString());
+        assertNotNull(sudokuBoard2.toString());
+    }
+
+    @Test
+    public void testToString(){
+        SudokuBoard su = new SudokuBoard();
+        SudokuBoard su1 = new SudokuBoard();
+        assertEquals(su.toString(),su1.toString());
     }
 
     @Test
@@ -95,14 +187,5 @@ class SudokuBoardTest {
         SudokuSolver solver=new BacktrackingSudokuSolver();
         Assertions.assertFalse(sudoku3.checkBoard());
         solver.solve(sudoku3);
-    }
-
-    @Test
-    public void Tescik(){
-        sudokuBoard.generateBoard();
-        SudokuSolver solver=new BacktrackingSudokuSolver();
-        solver.solve(sudokuBoard);
-        SudokuRow sudokuRow = sudokuBoard.getRow(0);
-        sudokuRow.verify();
     }
 }

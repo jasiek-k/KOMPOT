@@ -7,17 +7,17 @@ import java.util.List;
 
 class BacktrackingSudokuSolverTest {
 
+    SudokuBoard board=new SudokuBoard();
+
     @Test
     void solveTest1() {
-        SudokuBoard board=new SudokuBoard();
         board.generateBoard();
         BacktrackingSudokuSolver solver=new BacktrackingSudokuSolver();
-        solver.solve(board);
+        Assertions.assertTrue(solver.solve(board));
     }
 
     @Test
     void solveTest2() {
-        SudokuBoard board=new SudokuBoard();
         board.generateBoard();
         BacktrackingSudokuSolver solver=new BacktrackingSudokuSolver();
         solver.solve(board);
@@ -28,20 +28,9 @@ class BacktrackingSudokuSolverTest {
                 for (int j = 0; j < 9; j++) {
                     if (i != j) {
                         Assertions.assertFalse(tmp2.get(k).get(i) == tmp2.get(k).get(j));
+                        Assertions.assertFalse(tmp2.get(i).get(k) == tmp2.get(j).get(k));
                         Assertions.assertTrue(tmp2.get(k).get(i).getFieldValue() > 0);
                         Assertions.assertTrue(tmp2.get(k).get(i).getFieldValue() < 10);
-                    }
-                }
-            }
-        }
-
-        for (int k = 0; k < 9; k++) {
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
-                    if (i != j) {
-                        Assertions.assertFalse(tmp2.get(i).get(k) == tmp2.get(j).get(k));
-                        Assertions.assertTrue(tmp2.get(i).get(k).getFieldValue() > 0);
-                        Assertions.assertTrue(tmp2.get(i).get(k).getFieldValue() < 10);
                     }
                 }
             }
