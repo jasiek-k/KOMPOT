@@ -118,10 +118,12 @@ public class MenuController {
     @FXML
     public void eng(){
         lang=1;
+        Locale.setDefault(new Locale("eng"));
     }
 
     @FXML
     public void pl(){
         lang=0;
+        Locale.setDefault(new Locale("pl"));
     }
 }
