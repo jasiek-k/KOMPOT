@@ -1,7 +1,10 @@
+package GUI;
+
 import dao.FileSudokuBoardDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import zad2.*;
@@ -107,6 +110,15 @@ public class MenuController {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    public void authors() {
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.Resources");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(bundle.getString("title"));
+        alert.setHeaderText(bundle.getString("authors"));
+        alert.showAndWait();
     }
 
     @FXML

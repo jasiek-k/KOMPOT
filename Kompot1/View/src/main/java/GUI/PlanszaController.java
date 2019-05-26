@@ -1,3 +1,5 @@
+package GUI;
+
 import dao.FileSudokuBoardDao;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -40,13 +42,11 @@ public class PlanszaController {
 
     @FXML
     public void sprawdz() {
-        //System.out.print(Locale.getDefault());
-        ResourceBundle bundle;
         sudokuBoard = MenuController.getSudokuBoard();
         List<Node> childrens = gridPane.getChildren();
         int x, y, var;
         TextField value;
-        String tmp, content, title = "SUDOKU INFO";
+        String tmp;
 
         for (Node node : childrens) {
             value = (TextField) node;
@@ -58,16 +58,29 @@ public class PlanszaController {
             sudokuBoard.set(x, y, var);
         }
 
+        if (sudokuBoard.checkBoard() && !findZero(sudokuBoard)) alertPositive();
+        else alertNegative();
+    }
+
+    private void alertPositive() {
+        ResourceBundle bundle;
         if(Locale.getDefault().toString().equals("eng")) bundle = ResourceBundle.getBundle("bundles.language_eng");
         else bundle = ResourceBundle.getBundle("bundles.language_pl");
-
-        if (sudokuBoard.checkBoard() && !findZero(sudokuBoard)) content = bundle.getString("alertPositive");
-        else content = bundle.getString("alertNegative");
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
+        alert.setTitle("SUDOKU INFO");
         alert.setHeaderText(null);
-        alert.setContentText(content);
+        alert.setContentText(bundle.getString("alertPositive"));
+        alert.showAndWait();
+    }
+
+    private void alertNegative() {
+        ResourceBundle bundle;
+        if(Locale.getDefault().toString().equals("eng")) bundle = ResourceBundle.getBundle("bundles.language_eng");
+        else bundle = ResourceBundle.getBundle("bundles.language_pl");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("SUDOKU INFO");
+        alert.setHeaderText(null);
+        alert.setContentText(bundle.getString("alertNegative"));
         alert.showAndWait();
     }
 
