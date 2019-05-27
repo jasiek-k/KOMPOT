@@ -62,9 +62,9 @@ public class SudokuBoard implements Serializable, Cloneable {
         }
         for (int i = 0; i < 9; i += 3) {
             for (int j = 0; j < 9; j += 3) {
-                if (!getBox(i, j).verify()) {
-                    return false;
-                }
+                //if (!getBox(i, j).verify()) {
+                //    return false;
+               // }
             }
         }
         return true;
@@ -163,7 +163,7 @@ public class SudokuBoard implements Serializable, Cloneable {
         int index = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                box.set(index++, board.get(row * 3 + i).get(col * 3 + j));
+               // box.set(index++, board.get(row * 3 + i).get(col * 3 + j));
             }
         }
         return new SudokuBox(box);

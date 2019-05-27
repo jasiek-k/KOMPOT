@@ -1,19 +1,22 @@
+package GUI;
+
+import dao.FileSudokuBoardDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import zad2.*;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Random;
+import java.util.ResourceBundle;
 
-public class MenuController {
+public class MenuController{
 
     private static SudokuBoard sudokuBoard = new SudokuBoard();
-    private MainController  mainController;
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
 
     private void gBoard() {
         SudokuSolver sudokuSolver = new BacktrackingSudokuSolver();
@@ -90,13 +93,59 @@ public class MenuController {
 
     @FXML
     public void startGame(){
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("plansza.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/plansza.fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("bundles.lang"));
         Pane pane = null;
         try {
             pane = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mainController.setScreen(pane);
+        Scene scene = new Scene(pane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void wczytaj(){
+        FileSudokuBoardDao fileSudokuBoardDao = new FileSudokuBoardDao("gra.bin");
+        sudokuBoard = fileSudokuBoardDao.read();
+    }
+
+    @FXML
+    public void authors() {
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.LRB");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(bundle.getString("title"));
+        alert.setHeaderText(bundle.getString("authors"));
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void eng(){
+        Locale.setDefault(new Locale("eng"));
+        loadMenu();
+    }
+
+    @FXML
+    public void pl(){
+        Locale.setDefault(new Locale("pl"));
+        loadMenu();
+    }
+
+    public void loadMenu(){
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("bundles.lang"));
+        Pane pane = null;
+        try {
+            pane = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(pane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 }
