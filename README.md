@@ -1,6 +1,6 @@
 # KOMPOT
 LISTA TO-DO
-* przemodelować UI xddddd
-* poprawić getBox
 * polskie znaki 
+* resource bundles do poprawy 
+--------------------
 * wykorzystanie css
