@@ -1,0 +1,41 @@
+2019-06-02 18:15:17 INFO  MenuController:73 - Choosen level: easy
+2019-06-02 18:15:27 INFO  MenuController:96 - Choosen level: medium
+2019-06-02 18:15:29 INFO  MenuController:119 - Choosen level: hard
+2019-06-02 18:26:18 INFO  MenuController:62 - Choosen level: easy
+2019-06-02 18:26:23 INFO  MenuController:85 - Choosen level: medium
+2019-06-02 18:26:25 INFO  MenuController:108 - Choosen level: hard
+2019-06-02 18:27:50 INFO  MenuController:62 - Choosen level: easy
+2019-06-02 18:27:51 INFO  MenuController:85 - Choosen level: medium
+2019-06-02 18:33:43 INFO  MenuController:60 - Choosen level: easy
+2019-06-02 18:33:44 INFO  MenuController:83 - Choosen level: medium
+2019-06-02 18:33:45 INFO  MenuController:106 - Choosen level: hard
+2019-06-02 18:33:51 INFO  MenuController:60 - Wybrany poziom: latwy
+2019-06-02 18:33:53 INFO  MenuController:83 - Wybrany poziom: sredni
+2019-06-02 18:33:54 INFO  MenuController:125 - Gra rozpoczeta
+2019-06-02 18:37:00 INFO  MenuController:60 - Choosen level: easy
+2019-06-02 18:37:01 INFO  MenuController:60 - Choosen level: easy
+2019-06-02 18:37:02 INFO  MenuController:83 - Choosen level: medium
+2019-06-02 18:37:04 INFO  MenuController:125 - Game started
+2019-06-02 22:17:27 INFO  MenuController:60 - Choosen level: easy
+2019-06-02 22:17:30 INFO  MenuController:60 - Choosen level: easy
+2019-06-02 22:17:32 INFO  MenuController:83 - Choosen level: medium
+2019-06-02 22:17:34 INFO  MenuController:106 - Choosen level: hard
+2019-06-02 22:17:39 INFO  MenuController:155 - Zmieniono jezyk na polski
+2019-06-02 22:17:44 INFO  MenuController:147 - Language switched to English
+2019-06-02 22:17:48 INFO  MenuController:155 - Zmieniono jezyk na polski
+2019-06-02 22:17:50 INFO  MenuController:60 - Wybrany poziom: latwy
+2019-06-02 22:17:53 INFO  MenuController:125 - Gra rozpoczeta
+2019-06-02 22:28:10 INFO  MenuController:57 - Choosen level: easy
+2019-06-02 22:28:11 INFO  MenuController:80 - Choosen level: medium
+2019-06-02 22:28:13 INFO  MenuController:152 - Zmieniono jezyk na polski
+2019-06-02 22:28:14 INFO  MenuController:57 - Wybrany poziom: latwy
+2019-06-02 22:28:20 INFO  MenuController:80 - Wybrany poziom: sredni
+2019-06-02 22:28:20 INFO  MenuController:57 - Wybrany poziom: latwy
+2019-06-02 22:28:21 INFO  MenuController:122 - Gra rozpoczeta
+2019-06-02 22:28:24 INFO  MenuController:77 - Sudoku nie zostalo rozwiazane
+2019-06-02 22:28:54 INFO  MenuController:77 - Sudoku nie zostalo rozwiazane
+2019-06-02 22:30:41 INFO  MenuController:125 - Praca programu zostala zakonczona
+2019-06-02 22:30:50 INFO  MenuController:57 - Choosen level: easy
+2019-06-02 22:30:53 INFO  MenuController:122 - Game started
+2019-06-02 22:31:25 INFO  MenuController:74 - Sudoku has been solved
+2019-06-02 22:31:28 INFO  MenuController:125 - Program has been shut down

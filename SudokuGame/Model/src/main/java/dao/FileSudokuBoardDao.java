@@ -3,9 +3,13 @@ package dao;
 import zad2.SudokuBoard;
 
 import java.io.*;
+import java.util.ResourceBundle;
+import org.apache.log4j.Logger;
 
 public class FileSudokuBoardDao implements Dao<SudokuBoard> {
     private String fileName;
+    private ResourceBundle resourceBundle = ResourceBundle.getBundle("langModel_pl");
+    final static Logger logger = Logger.getLogger(FileSudokuBoardDao.class);
 
     public FileSudokuBoardDao(String fileName) {
         this.fileName = fileName;
@@ -17,11 +21,14 @@ public class FileSudokuBoardDao implements Dao<SudokuBoard> {
 
     @Override
     public void write(SudokuBoard sudokuBoard) {
+        ResourceBundle bundle = ResourceBundle.getBundle("bundles.lang");
+        logger.info(bundle.getString("loaded"));
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName))) {
             objectOutputStream.writeObject(sudokuBoard);
             objectOutputStream.flush();
         } catch (IOException ioe) {
-            System.out.print("IOE nie dziala");
+            System.out.print(resourceBundle.getObject("ioe"));
+            ioe.getCause();
         }
     }
 
@@ -31,13 +38,16 @@ public class FileSudokuBoardDao implements Dao<SudokuBoard> {
             SudokuBoard sudokuBoard = (SudokuBoard) objectInputStream.readObject();
             return sudokuBoard;
         } catch (EOFException ex) {
-            System.out.print("Koniec pliku");
+            System.out.print(resourceBundle.getObject("endFile"));
+            ex.getCause();
         }catch (IOException ioe){
-            System.out.print("IOE exception");
+            System.out.print(resourceBundle.getObject("ioe"));
+            ioe.getCause();
         }catch (ClassNotFoundException cnfe){
-            System.out.print("Class not found");
+            System.out.print(resourceBundle.getObject("klass"));
+            cnfe.getCause();
         }
-        throw new NullPointerException("Null ptr exception");
+        throw new NullPointerException(resourceBundle.getString("nullPointer"));
     }
 
     @Override
